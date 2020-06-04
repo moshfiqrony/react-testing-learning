@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import Login from './routes/Login';
+import Register from './routes/Register';
 
 function App() {
     return (
@@ -30,10 +31,6 @@ const About = () => {
 
 const FAQ = () => {
     return (<h1>FAQ</h1>)
-}
-
-const Register = () => {
-    return (<h1>Register</h1>)
 }
 
 const NavBar = () => {

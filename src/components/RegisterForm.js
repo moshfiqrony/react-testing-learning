@@ -5,14 +5,10 @@ import React, { useState } from 'react';
 function Form(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
     return (
         <form
-            onSubmit={(e) => {
-                e.preventDefault();
-                if(!props.loading){
-                    props.handleSubmit(e, username, password)
-                }
-            }}
+            onSubmit={(e) => props.handleSubmit(e, username, password, email)}
         >
             <div className="row justify-content-center d-flex align-items-center">
                 <div className="col-4">
@@ -25,6 +21,17 @@ function Form(props) {
                                 value={username}
                                 placeholder='Enter your username'
                                 onChange={(event) => setUsername(event.target.value)}
+                            />
+                        </div>
+                        <div className="col-12 pb-4">
+                            <Input
+                                name='email'
+                                required
+                                type='email'
+                                size='large'
+                                value={email}
+                                placeholder='Enter your email'
+                                onChange={(event) => setEmail(event.target.value)}
                             />
                         </div>
                         <div className="col-12 pb-4">
@@ -46,7 +53,7 @@ function Form(props) {
                                 name='submit'
                                 size='large'
                             >
-                                {props.loading ? <Spin indicator={<LoadingOutlined style={{color: '#fff'}} />}/> : 'LOGIN'}
+                                {props.loading ? <Spin indicator={<LoadingOutlined style={{color: '#fff'}} />}/> : 'REGISTER'}
                             </Button>
                         </div>
                     </div>

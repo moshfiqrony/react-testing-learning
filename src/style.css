@@ -1,3 +1,10 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+}
+
 li{
     display: inline;
     padding: 20px;
@@ -8,4 +15,8 @@ li{
 ul{
     margin: 20px 0;
     padding: 0;
+}
+
+.anticon svg{
+    vertical-align: unset!important;
 }
