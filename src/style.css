@@ -1,0 +1,11 @@
+li{
+    display: inline;
+    padding: 20px;
+    text-decoration: none;
+    text-decoration-style: none;
+    background: #fce9e9;
+}
+ul{
+    margin: 20px 0;
+    padding: 0;
+}
