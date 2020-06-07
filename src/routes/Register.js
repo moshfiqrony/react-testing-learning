@@ -1,17 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RegisterForm from '../components/RegisterForm';
+import {createUser, getUsers} from '../api/index';
+
 
 function Register(props) {
     const [loading, setLoading] = useState(false)
 
-    const handleSubmit = (e, username, password, email) => {
-        setLoading(true)
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('handleSubmit', username, password, email);
-        setTimeout(() => {
-            setLoading(false)
-        }, 10000);
+        setLoading(true)
+        const {username, password, email} = e.target.elements;
+        if(getLength(username.value) !== 0 && getLength(password.value) !== 0 && getLength(email.value) !== 0){
+            createUser(username.value, password.value, email.value)
+            .then(res => {
+                console.log(res)
+                if(res.status === 200){
+                    props.history.push('/login');
+                }else{
+                    props.history.push('/register');
+                }
+            })
+            
+        }else{
+            props.history.push('/register')
+        }
     }
+
+    const getLength = (str) => (str.trim().length)
 
     return (
         <div>

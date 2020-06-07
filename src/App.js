@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import Login from './routes/Login';
 import Register from './routes/Register';
+import Home from './routes/Home';
 
 function App() {
     return (
@@ -21,9 +22,7 @@ function App() {
 export default App;
 
 
-const Home = () => {
-    return (<h1>Home</h1>)
-}
+
 
 const About = () => {
     return (<h1>About</h1>)

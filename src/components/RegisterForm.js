@@ -8,7 +8,7 @@ function Form(props) {
     const [email, setEmail] = useState('')
     return (
         <form
-            onSubmit={(e) => props.handleSubmit(e, username, password, email)}
+            onSubmit={props.handleSubmit}
         >
             <div className="row justify-content-center d-flex align-items-center">
                 <div className="col-4">
@@ -18,9 +18,9 @@ function Form(props) {
                                 name='username'
                                 required
                                 size='large'
-                                value={username}
+                                // value={username}
                                 placeholder='Enter your username'
-                                onChange={(event) => setUsername(event.target.value)}
+                                // onChange={(event) => setUsername(event.target.value)}
                             />
                         </div>
                         <div className="col-12 pb-4">
@@ -29,9 +29,9 @@ function Form(props) {
                                 required
                                 type='email'
                                 size='large'
-                                value={email}
+                                // value={email}
                                 placeholder='Enter your email'
-                                onChange={(event) => setEmail(event.target.value)}
+                                // onChange={(event) => setEmail(event.target.value)}
                             />
                         </div>
                         <div className="col-12 pb-4">
@@ -40,9 +40,9 @@ function Form(props) {
                                 required
                                 type='password'
                                 size='large'
-                                value={password}
+                                // value={password}zz
                                 placeholder='Enter your password'
-                                onChange={(event) => setPassword(event.target.value)}
+                                // onChange={(event) => setPassword(event.target.value)}
                             />
                         </div>
                         <div className="col-12 pb-4">
